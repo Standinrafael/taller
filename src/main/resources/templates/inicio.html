@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<title> MENU PRINCIPAL</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device'width,initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/3ad275e8aa.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body style="background-color: rgb(255, 255, 255);">
+	<div style="margin-top: 0.5mm;display: flex;">
+		<img style="width: 5%; margin-left: 1cm;"
+			src="https://pbs.twimg.com/profile_images/1509299036406308866/Wr7VUxhp_400x400.jpg">
+		<h1 style="color:rgb(6, 24, 151); text-align:center;margin-left:10cm;margin-top:1mm;"> GUTEMBERG WEB</h1> <br />
+
+	</div>
+	<hr style="color: rgb(242, 124, 17); height: 2px;" <br />
+	<br />
+	<div style="text-align:center; ">
+
+		<form action="#" th:action="@{/sistemas/inicio/principal}" th:method="post">
+			<div
+				style=" padding: 20px 30px ;background:rgb(137, 242, 248) ; margin: auto; margin-top: 300 x; box-shadow: 7px 13px 37px rgb(255, 186, 117);width: 400px;height: 350px;">
+				<br />
+				<h2 style="color: rgb(242, 124, 17);"> INICIAR SESIÓN</h2>
+				<div>
+					<label style="padding: 5px 5px; width: 100%;color: rgb(242, 124, 17);">EMAIL</label>
+					<input type="email" id="email" name="email" placeholder="Ingrese su email" />
+				</div>
+
+				<div>
+					<label style="padding: 5px 5px; width: 100%;color: rgb(242, 124, 17);">CONTRASEÑA</label>
+					<input type="password" id="password" name="password" placeholder="Ingrese su contraseña" />
+				</div>
+
+				<br />
+				<div>
+					<p> <a style="color:rgb(6, 24, 151)"
+							href="http://localhost:8080/sistemas/inicio/datos/olvidados">Olvidaste tu contraseña?</a> <a
+							style="color:rgb(6, 24, 151)"
+							href="http://localhost:8080/sistemas/inicio/datos/olvidados">Olvidaste tu email?</a></p>
+				</div>
+				<div>
+					<div>
+					</div>
+
+
+					<input type="submit" value="INICIAR SESION">
+
+				</div>
+
+
+			</div>
+
+		</form>
+
+	</div>
+
+	<br />
+	<br />
+	<hr style="color: rgb(242, 124, 17);height: 2px; ">
+	<footer style="color:rgb(6, 24, 151)">
+		<h4 style="text-align: center;color: rgb(242, 124, 17);"> CONTACTENOS</h4>
+
+
+		<div>
+			<div style="display: inline-block;padding: 12px;margin-left: 0.5cm;">
+				<p> Dirección: Napo y Esmeraldas</p>
+			</div>
+			<div style="display: inline-block;padding: 12px;margin-left: 9cm;">
+				<p> Teléfono: 02589625</p>
+			</div>
+			<div style="display: inline-block;padding: 12px;margin-left: 4.5cm;">
+				<p> Facebook: www.facebook.com/gutembergschedule</p>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
