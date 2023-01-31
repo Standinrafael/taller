@@ -26,7 +26,7 @@
 	<br />
 	<br />
 
-	<div style="margin-left: 1cm;">
+<div style="margin-left: 1cm;">
 		<label> Ingrese el correo del docente a buscar</label>
 		<br />
 		<form action="#" th:action="@{/sistemas/encontrar/docente}" th:method="get">
@@ -35,11 +35,12 @@
 
 		</form>
 	</div>
+	
+	<br />
+	<br />
+	<br />
+	
 
-
-	<br />
-	<br />
-	<br />
 
 	<div style="margin-left: 1.5cm; margin-right: 1.5cm;">
 
@@ -59,6 +60,10 @@
 						<th>Direccion</th>
 						<th>Telefono</th>
 						<th>Correo</th>
+						<th>Dia atencion</th>
+						<th>Horario atencion</th>
+						<th>Cupo de atencion</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -69,6 +74,9 @@
 						<td th:text="${docente.direccion}" />
 						<td th:text="${docente.telefono}" />
 						<td th:text="${docente.correo}" />
+						<td th:text="${docente.diaAtencion}" />
+						<td th:text="${hora}"> </td>
+						<td th:text="${docente.horasLibres}" />
 
 					</tr>
 				</tbody>
@@ -77,8 +85,35 @@
 		<div style="text-align: center;" id="contenido" th:if="${docenteRetorna==null} ">
 			<h3> No hay resultados. </h3>
 		</div>
+		
+		
 
 	</div>
+	
+	<br />
+	<div th:if="${repre1!=null}">
+	<form action="#" th:action="@{/sistemas/cupo/docente}" th:method="put">
+
+			<input type="submit" value="Obtener cupo de consulta"
+				style="border-color: rgb(64, 0, 64); color: rgb(64, 0, 64); background-color: lightcyan;">
+		</form>
+	
+	</div>
+	<br />
+
+	<div style="margin-left: 1cm;" th:if="${valor==false}">
+		<h5> Registro de cita no generado</h5>
+		<h5 th:text="${mensaje}"></h5>
+		
+	</div>
+
+	<div style="margin-left: 1cm;" th:if="${valor==true}">
+		<h5> Registro generado</h5>
+		<h5 th:text="${mensaje1}"></h5>
+		<h5 th:text="${mensaje2}"></h5>
+	</div>
+
+	<br />
 
 
 	<br />

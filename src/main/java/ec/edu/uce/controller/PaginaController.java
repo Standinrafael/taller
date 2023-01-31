@@ -74,6 +74,7 @@ public class PaginaController {
 	private Estudiante estudiante = new Estudiante();
 	private Estudiante estudianteActualiza = new Estudiante();
 	private Docente docente = new Docente();
+	private Docente docenteTemporal = new Docente();
 	private Empleado empleado = new Empleado();
 	private Representante representante = new Representante();
 
@@ -222,6 +223,7 @@ public class PaginaController {
 			
 		} else {
 			valor = false;
+			modelo.addAttribute("valor", valor);
 			modelo.addAttribute("mensaje", mensaje);
 		}
 		
@@ -282,6 +284,7 @@ public class PaginaController {
 			modelo.addAttribute("valor", valor);
 		} else {
 			valor = false;
+			modelo.addAttribute("valor", valor);
 			modelo.addAttribute("mensaje", mensaje);
 		}
 
@@ -383,15 +386,71 @@ public class PaginaController {
 
 	@GetMapping("buscar/docente")
 	public String buscarDocente(Model modelo) {
+		
+		
 		return "docenteResultado";
 	}
-
+	
+	
 	@GetMapping("encontrar/docente")
 	public String buscarDocente(@RequestParam("email") String emailDocente, Model modelo) {
 
 		Docente docenteRetorna = this.gestorCursoService.buscarDocentePorEmail(emailDocente);
-
+		docenteTemporal=docenteRetorna;
+		Representante repre1=representante;
+		
+		if(docenteRetorna!=null) {
+			String hora=docenteRetorna.getHoraAtencion().toString()+":00";
+			modelo.addAttribute("hora", hora);
+		}
+		
 		modelo.addAttribute("docenteRetorna", docenteRetorna);
+		modelo.addAttribute("repre1", repre1);
+		
+		
+		return "docenteResultado";
+	}
+
+	@PutMapping("cupo/docente")
+	public String buscarCupoDocente( Model modelo) {
+
+		String mensaje= "Ya no hay cupos de atencion a padres de familia para el docente:"+docenteTemporal.getNombre()+" "+docenteTemporal.getApellido();
+		Boolean valor;
+		Integer contador=0;
+		Integer horario=docenteTemporal.getHoraAtencion();
+		Integer horario2=docenteTemporal.getHoraAtencion()+1;
+		String mensaje1="Su cupo de atencion fue generado para el dia: "+docenteTemporal.getDiaAtencion()+" a las: "+horario.toString()+":00";
+		String mensaje2="Su cupo de atencion fue generado para el dia: "+docenteTemporal.getDiaAtencion()+" a las: "+horario2.toString()+":00";
+		if(docenteTemporal !=null) {
+			horario=horario+1;
+			
+			if(docenteTemporal.getHorasLibres()==2) {
+				modelo.addAttribute("mensaje1", mensaje1);
+			}else {
+				modelo.addAttribute("mensaje2", mensaje2);
+			}
+			
+			docenteTemporal.setHorasLibres(docenteTemporal.getHorasLibres()-1);
+			
+			if(docenteTemporal.getHorasLibres()>=0) {
+				this.docenteService.actualizarDocente(docenteTemporal);
+				
+				valor=true;
+				
+				modelo.addAttribute("valor", valor);
+				
+			}
+			else {
+				valor=false;
+				modelo.addAttribute("valor", valor);
+				modelo.addAttribute("mensaje", mensaje);
+			}
+
+			
+			
+		}
+		horario=horario+1;
+		
 		return "docenteResultado";
 	}
 
@@ -399,15 +458,34 @@ public class PaginaController {
 
 	@GetMapping("buscar/estudiante")
 	public String buscarEstudiante(Model modelo) {
+Representante repre1=representante;
+		
+		List<Estudiante> lista=repre1.getEstudiantes();
+		
+		Estudiante estudiante1=lista.get(0);
+		
+		System.out.println(estudiante1);
+				
+		
+
+		modelo.addAttribute("estudiante1", estudiante1);
 		return "estudianteResultado";
 	}
 
 	@GetMapping("encontrar/estudiante")
 	public String buscarEstudiante(@RequestParam("emailestu") String emailEstudiante, Model modelo) {
 
-		Estudiante estudianteRetorna = this.gestorCursoService.buscarEstudiantePorEmail(emailEstudiante);
+		Representante repre1=representante;
+		
+		List<Estudiante> lista=repre1.getEstudiantes();
+		
+		Estudiante estudiante1=lista.get(0);
+		
+		System.out.println(estudiante1);
+				
+		
 
-		modelo.addAttribute("estudianteRetorna", estudianteRetorna);
+		modelo.addAttribute("estudiante1", estudiante1);
 		return "estudianteResultado";
 	}
 

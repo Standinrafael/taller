@@ -26,24 +26,10 @@
 	<br />
 	<br />
 
-	<div style="margin-left: 1cm;">
-		<label> Ingrese el correo del estudiante a buscar</label>
-		<br />
-		<form action="#" th:action="@{/sistemas/encontrar/estudiante}" th:method="get">
-			<input type="email" id="emailestu" name="emailestu" placeholder="Ingrese el email">
-			<input type="submit" value="Buscar" />
-
-		</form>
-	</div>
-
-
-	<br />
-	<br />
-	<br />
 
 	<div style="margin-left: 1.5cm; margin-right: 1.5cm;">
 
-		<div style="display: flex;" th:if="${estudianteRetorna!=null}">
+		<div style="display: flex;" th:if="${estudiante1!=null}">
 
 			<div>
 				<img style="border-radius: 35%; padding: 1%;margin-left: 1cm;background-color:rgb(0, 128, 192)"
@@ -62,7 +48,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="estudiante:${estudianteRetorna}">
+					<tr th:each="estudiante:${estudiante1}">
 						<td th:text="${estudiante.nombre}" />
 						<td th:text="${estudiante.apellido}" />
 						<td th:text="${estudiante.edad}" />
@@ -73,8 +59,77 @@
 					</tr>
 				</tbody>
 			</table>
+
+		
+
 		</div>
-		<div style="text-align: center;" id="contenido_estud" th:if="${estudianteRetorna==null} ">
+		
+		<div th:if="${estudiante1!=null}">
+			<br />
+			<table style="display: inline-block; text-align: center; margin-left: 12cm;" class="table">
+				<thead>
+					<tr>
+						<th>Hora</th>
+						<th>Lunes</th>
+						<th>Martes</th>
+						<th>Miercoles</th>
+						<th>Jueves</th>
+						<th>Viernes</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>8:00</th>
+						<th>Matematicas</th>
+						<th>Lenguaje</th>
+						<th>Ciencias</th>
+						<th>Sociales</th>
+						<th>Aleman</th>
+					</tr>
+					<tr>
+						<th>9:00</th>
+						<th>Lenguaje</th>
+						<th>Ciencias</th>
+						<th>Sociales</th>
+						<th>Aleman</th>
+						<th>Matematicas</th>
+					</tr>
+					<tr>
+						<th>10:00</th>
+						<th>Ciencias</th>
+						<th>Sociales</th>
+						<th>Aleman</th>
+						<th>Matematicas</th>
+						<th>Lenguaje</th>
+					</tr>
+					<tr>
+					    <th>11:00</th>
+						<th colspan="5">Receso</th>
+						
+					</tr>
+					<tr>
+						<th>12:00</th>
+						<th>Sociales</th>
+						<th>Aleman</th>
+						<th>Matematicas</th>
+						<th>Lenguaje</th>
+						<th>Ciencias</th>
+					</tr>
+					<tr>
+						<th>13:00</th>
+						<th>Aleman</th>
+						<th>Matematicas</th>
+						<th>Lenguaje</th>
+						<th>Ciencias</th>
+						<th>Sociales</th>
+					</tr>
+					
+				</tbody>
+			</table>
+
+		</div>	
+		<div style="text-align: center;" id="contenido_estud" th:if="${estudiante1==null} ">
 			<h3> No hay resultados. </h3>
 		</div>
 
