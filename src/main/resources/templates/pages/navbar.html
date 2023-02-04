@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="pages/headerandfooter :: head">
+</head>
+
+<body>
+    <nav th:fragment="navestudiante" class="bg-orange">
+        <ul class="container container-flex list-unstyled">
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="estudiantes">
+                    <i class='text-white fas fa-user-graduate'></i>
+                    Menú de Estudiantes
+                </a>
+            </li>
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="reportes">
+                    <i class='text-white fa-solid fa-book-open-reader'></i>
+                    Menú de Reportes
+                </a>
+            </li>
+            <li class="btn-orange py-2 right-component">
+                <a class="text-white fw-bold px-3 py-2" href="http://localhost:8080/sistemas/inicio">
+                    <i class='text-white fa-solid fa-door-open'></i>
+                    Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <nav th:fragment="navdocente" class="bg-orange">
+        <ul class="container container-flex list-unstyled">
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="docentes">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    Menú de Docentes
+                </a>
+            </li>
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="reportes">
+                    <i class='text-white fa-solid fa-book-open-reader'></i>
+                    Menú de Reportes
+                </a>
+            </li>
+            <li class="btn-orange py-2 right-component">
+                <a class="text-white fw-bold px-3 py-2" href="http://localhost:8080/sistemas/inicio">
+                    <i class='text-white fa-solid fa-door-open'></i>
+                    Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <nav th:fragment="navempleado" class="bg-orange">
+        <ul class="container container-flex list-unstyled">
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="docentes">
+                    <i class="text-white fa-solid fa-person-chalkboard"></i>
+                    Menú de Docentes
+                </a>
+            </li>
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="reportes">
+                    <i class="text-white fa-solid fa-book-open-reader"></i>
+                    Menú de Reportes
+                </a>
+            </li>
+            <li class="btn-orange py-2 right-component">
+                <a class="text-white fw-bold px-3 py-2" href="http://localhost:8080/sistemas/inicio">
+                    <i class="text-white fa-solid fa-door-open"></i>
+                    Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <nav th:fragment="navrepresentante" class="bg-orange">
+        <ul class="container container-flex list-unstyled">
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="docentes">
+                    <i class="text-white fa-solid fa-person-chalkboard"></i>
+                    Menú de Docentes
+                </a>
+            </li>
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="estudiantes">
+                    <i class="text-white fa-solid fa-user-graduate"></i>
+                    Menú de Estudiantes
+                </a>
+            </li>
+            <li class="btn-orange py-2">
+                <a class="text-white text-decoration-none px-3 py-2" href="reportes">
+                    <i class="text-white fa-solid fa-book-open-reader"></i>
+                    Menú de Reportes
+                </a>
+            </li>
+            <li class="btn-orange py-2 right-component">
+                <a class="text-white fw-bold px-3 py-2" href="http://localhost:8080/sistemas/inicio">
+                    <i class="text-white fa-solid fa-door-open"></i>
+                    Cerrar Sesión
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

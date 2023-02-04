@@ -1,0 +1,86 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-content-center {
+    justify-content: center;
+}
+
+.flex-align-items {
+    align-items: center;
+}
+
+.left-component {
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.center-component {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right-component {
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.logo {
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.header {
+    background-color: #45aaf2;
+    color: #fff;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: #45aaf2;
+    color: #fff;
+}
+
+svg {
+    width: 2em;
+    height: 2em;
+    margin: 0em 2em;
+}
+
+.foot-copyright {
+    background-color: #2d98da;
+}
+
+.bg-orange {
+    background-color: #fd9644;
+}
+.btn-orange {
+    background-color: #fd9644;
+    color: #fff;
+}
+.btn-orange:hover {
+    background-color: #fa8231;
+}
+.text-orange{
+    color: #fd9644;
+}

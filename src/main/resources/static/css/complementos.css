@@ -1,0 +1,23 @@
+.opt {
+    background-image: linear-gradient(#fff 0%, #fff 40%, #45aaf2 40%, #45aaf2 100%);
+    border: none;
+}
+
+.opt-icon {
+    display: flex;
+    background-color: #2d98da;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff;
+    border-radius: 150px;
+    margin: auto;
+}
+
+.opt-icon svg {
+    display: block;
+    width: 5em;
+    height: 5em;
+}

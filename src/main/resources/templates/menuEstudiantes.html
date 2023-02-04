@@ -1,166 +1,75 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{pages/headerandfooter}">
 
 <head>
-
 	<title> MENU PRINCIPAL</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device'width,initial-scale=1">
-	<meta http-equiv="x-ua-compatible">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/3ad275e8aa.js" crossorigin="anonymous"></script>
-
+	<link rel="stylesheet" th:href="@{/css/complementos.css}">
 </head>
 
-
-
-<body style="background-color: rgb(251, 252, 253);">
-	<div style="margin-top: 0.5mm;display: flex;">
-		<img style="width: 5%; margin-left: 1cm;"
-			src="https://pbs.twimg.com/profile_images/1509299036406308866/Wr7VUxhp_400x400.jpg">
-		<h1 style="color:rgb(6, 24, 151); text-align:center;margin-left:12cm;margin-top:1mm"> GUTEMBERG WEB</h1> <br />
-
-	</div>
-	<hr style="color: rgb(242, 124, 17); height: 2px;" <br />
-	<div th:if="${estu1!=null} AND ${docen1==null} AND ${emple1==null} AND ${repre1==null} ">
-		<header>
-			<nav style="background-color:rgb(6, 24, 151) ">
-				<ul>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-user-graduate"
-							style="color: rgb(242, 124, 17);"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="estudiantes">Menú de Estudiantes</a>
-					</li>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-book-open-reader"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="reportes">Menú de Reportes</a></li>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-door-open"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="http://localhost:8080/sistemas/inicio">Cerrar Sesión</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-
-	<div th:if="${estu1==null} AND ${docen1!=null} AND ${emple1==null} AND ${repre1==null}">
-		<header>
-			<nav style="background-color:rgb(6, 24, 151) ">
-				<ul>
-					<li style="display: inline-block; padding: 12px;"><i class="fa-solid fa-person-chalkboard"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="docentes">Menú de Docentes</a></li>
-					
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-book-open-reader"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="reportes">Menú de Reportes</a></li>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-door-open"
-							style="color:rgb(242, 124, 17);"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="http://localhost:8080/sistemas/inicio">Cerrar Sesión</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-
-	<div th:if="${estu1==null} AND ${docen1==null} AND ${emple1!=null} AND ${repre1==null}">
-		<header>
-			<nav style="background-color:rgb(6, 24, 151) ">
-				<ul>
-					<li style="display: inline-block; padding: 12px;"><i class="fa-solid fa-person-chalkboard"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="docentes">Menú de Docentes</a></li>
-							<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-user-graduate"
-							style="color: rgb(242, 124, 17);"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="estudiantes">Menú de Estudiantes</a>
-					</li>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-book-open-reader"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="reportes">Menú de Reportes</a></li>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-door-open"
-							style="color:rgb(242, 124, 17);"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="http://localhost:8080/sistemas/inicio">Cerrar Sesión</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-
-	<div th:if="${estu1==null} AND ${docen1==null} AND ${emple1==null} AND ${repre1!=null}">
-		<header>
-			<nav style="background-color:rgb(6, 24, 151) ">
-				<ul>
-
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-book-open-reader"
-							style="color:rgb(242, 124, 17) ;"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="reportes">Menú de Reportes</a></li>
-					<li style="display: inline-block; padding: 12px;"> <i class="fa-solid fa-door-open"
-							style="color:rgb(242, 124, 17);"></i> <a style="color:rgb(242, 124, 17) ;"
-							href="http://localhost:8080/sistemas/inicio">Cerrar Sesión</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-
-	<br />
-
-	<div style=" padding: 50px 30px ; ; margin: auto; margin-top: 550px x;width: 400px;height: 350px;">
-		<div style="text-align:center; ">
-
-
-			<table style="margin-left: 1.75cm;">
-				<tr>
-
-					<td>
-						<form action="#" th:action="@{/sistemas/inicio/estudiante}" th:method="get">
-
-							<input type="submit" value="REVISAR CALIFICACIONES/CONDUCTA"
-								style="color: rgb(128, 0, 0); background-color:beige;">
-						</form>
-
-					</td>
-
-				</tr>
-			</table>
-
-
+<body>
+	<div layout:fragment="page-content">
+		<div th:if="${estu1!=null} AND ${docen1==null} AND ${emple1==null} AND ${repre1==null} ">
+			<nav th:replace="pages/navbar :: navestudiante"></nav>
 		</div>
 
-		<br />
-		<div>
-			<table style="margin-top: 2cm;margin-left: 1.5cm;">
-				<tr>
-
-					<td>
-						<form action="#" th:action="@{/sistemas/inicio/estudiante/curso}" th:method="get">
-
-							<input type="submit" value="CALIFICACIONES DEL CURSO"
-								style="color: rgb(128, 0, 0); background-color:beige;">
-						</form>
-
-					</td>
-
-				</tr>
-			</table>
+		<div th:if="${estu1==null} AND ${docen1!=null} AND ${emple1==null} AND ${repre1==null}">
+			<nav th:replace="pages/navbar :: navdocente"></nav>
 		</div>
+
+		<div th:if="${estu1==null} AND ${docen1==null} AND ${emple1!=null} AND ${repre1==null}">
+			<nav th:replace="pages/navbar :: navempleado"></nav>
+		</div>
+
+		<div th:if="${estu1==null} AND ${docen1==null} AND ${emple1==null} AND ${repre1!=null}">
+			<nav th:replace="pages/navbar :: navrepresentante"></nav>
+		</div>
+
+		<div class="container my-5">
+			<div class="row">
+				<form action="#" class="col-md-6" th:action="@{/sistemas/inicio/estudiante}" th:method="get">
+					<!--<input type="submit" value="REVISAR CALIFICACIONES/CONDUCTA"
+						style="color: rgb(128, 0, 0); background-color:beige;">-->
+					<button class="col-md-12  container-flex flex-column opt">
+						<div class="opt-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-journal-check" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+								<path
+									d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+								<path
+									d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+							</svg>
+						</div>
+						<p class="center-component blockquote text-white mt-3">REVISAR CALIFICACIONES/CONDUCTA</p>
+					</button>
+				</form>
+				<form action="#" class="col-md-6" th:action="@{/sistemas/inicio/estudiante/curso}" th:method="get">
+	
+					<!--<input type="submit" value="CALIFICACIONES DEL CURSO"
+						style="color: rgb(128, 0, 0); background-color:beige;">-->
+					<button class="col-md-12 container-flex flex-column opt">
+						<div class="opt-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
+								<path
+									d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+								<path
+									d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+							</svg>
+						</div>
+						<p class="center-component blockquote text-center text-white mt-3">CALIFICACIONES DEL CURSO</p>
+					</button>
+				</form>
+			</div>
+	
+		</div>
+	
 	</div>
 
-	<hr style="color: rgb(242, 124, 17);height: 2px; ">
-
-
-	<footer style="color:rgb(6, 24, 151)">
-		<h4 style="text-align: center;color: rgb(242, 124, 17);"> CONTACTENOS</h4>
-
-
-
-		<div>
-			<div style="display: inline-block;padding: 12px;margin-left: 0.5cm;">
-				<p> Dirección: Napo y Esmeraldas</p>
-			</div>
-			<div style="display: inline-block;padding: 12px;margin-left: 9cm;">
-				<p> Teléfono: 02589625</p>
-			</div>
-			<div style="display: inline-block;padding: 12px;margin-left: 4.5cm;">
-				<p> Facebook: www.facebook.com/gutembergschedule</p>
-			</div>
-		</div>
-	</footer>
 </body>
+
 </html>
