@@ -8,25 +8,19 @@
 
 <body>
 	<div layout:fragment="page-content">
-		<div style="margin-top: 0.5mm;display: flex;">
-			<img style="width: 5%; margin-left: 1cm;"
-				src="https://pbs.twimg.com/profile_images/1509299036406308866/Wr7VUxhp_400x400.jpg">
-			<h1 style="color:rgb(6, 24, 151); text-align:center;margin-left:12cm;margin-top:1mm"> GUTEMBERG WEB</h1>
-			<br />
 
-		</div>
-		<hr style="color: rgb(242, 124, 17); height: 2px;" <br />
-		<br />
-		<br />
-
-		<div style="margin-left: 1cm;">
+		<div class="container my-5">
 			<label> Ingrese el correo del docente a buscar</label>
 			<br />
-			<form action="#" th:action="@{/sistemas/encontrar/docente}" th:method="get">
-				<input type="email" id="email" name="email" placeholder="Ingrese el email">
-				<input type="submit" value="Buscar" />
-
-			</form>
+			<div class="row">
+				<div class="col-md-4">
+					<form action="#" class="input-group flex-nowrap" th:action="@{/sistemas/encontrar/docente}"
+						th:method="get">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Ingrese el email">
+						<input type="submit" class="btn btn-primary" value="Buscar" />
+					</form>
+				</div>
+			</div>
 		</div>
 
 		<br />
@@ -110,37 +104,13 @@
 
 
 		<br />
-		<div style="text-align: center;">
+		<div class="text-center mb-5">
 			<form action="#" th:action="@{/sistemas/inicio/reportes}" th:method="get">
 
-				<input type="submit" value="REGRESAR MENU DE REPORTES"
-					style="border-color: rgb(64, 0, 64); color: rgb(64, 0, 64); background-color: lightcyan;">
+				<input type="submit" class="btn btn-warning" value="REGRESAR MENU DE REPORTES">
 			</form>
 		</div>
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<hr style="color: rgb(242, 124, 17);height: 2px; ">
-		<footer style="color:rgb(6, 24, 151)">
-			<h4 style="text-align: center;color: rgb(242, 124, 17)"> CONTACTENOS</h4>
-
-
-
-			<div>
-				<div style="display: inline-block;padding: 12px;margin-left: 0.5cm;">
-					<p> Dirección: Napo y Esmeraldas</p>
-				</div>
-				<div style="display: inline-block;padding: 12px;margin-left: 9cm;">
-					<p> Teléfono: 02589625</p>
-				</div>
-				<div style="display: inline-block;padding: 12px;margin-left: 4.5cm;">
-					<p> Facebook: www.facebook.com/gutembergschedule</p>
-				</div>
-			</div>
-		</footer>
 	</div>
 </body>
 

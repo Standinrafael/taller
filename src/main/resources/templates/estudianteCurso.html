@@ -8,28 +8,12 @@
 
 <body>
 	<div layout:fragment="page-content">
-		<div style="margin-top: 0.5mm;display: flex;">
-			<img style="width: 5%; margin-left: 1cm;"
-				src="https://pbs.twimg.com/profile_images/1509299036406308866/Wr7VUxhp_400x400.jpg">
-			<h1 style="color:rgb(6, 24, 151); text-align:center;margin-left:11cm;margin-top:1mm"> GUTEMBERG WEB</h1>
-			<br />
-
-		</div>
-		<hr style="color: rgb(242, 124, 17); height: 2px;" <br />
-		<br />
-
-		<h3 style="text-align: center;color: rgb(242, 124, 17);"> CALIFICACIONES DEL CURSO</h3>
-
-
-		<br />
-		<br />
-		<br />
+		
+		<h3 class="text-center my-5" style="color: rgb(242, 124, 17)"> CALIFICACIONES DEL CURSO</h3>
 
 		<div style="margin-left: 1.5cm; margin-right: 1.5cm;">
 
 			<div style="display: flex;" th:if="${estudiantes!=null} AND ${!estudiantes.isEmpty()}">
-
-
 
 				<table class="table " style="text-align: center; margin-left: 1cm; margin-right: 1cm;">
 					<!--CABECERA DE MI TABLA-->
@@ -74,10 +58,7 @@
 
 		</div>
 
-		<br />
-
-		<h3 style="text-align: center; color: rgb(242, 124, 17);"> PROMEDIOS DEL CURSO</h3>
-		<br />
+		<h3 class="text-center my-5" style="color: rgb(242, 124, 17);"> PROMEDIOS DEL CURSO</h3>
 
 		<div style="display: flex;text-align: center; margin-left: 1cm; margin-right: 1cm;" th:if="${promedio!=null} ">
 
@@ -109,43 +90,14 @@
 					</tr>
 				</tbody>
 			</table>
-
 		</div>
 
-
-		<br />
-		<div style="text-align: center;">
+		<div class="text-center my-5">
 			<form action="#" th:action="@{/sistemas/inicio/estudiantes}" th:method="get">
-
-				<input type="submit" value="REGRESAR MENU DE ESTUDIANTES"
-					style="border-color: rgb(64, 0, 64); color: rgb(64, 0, 64); background-color: lightcyan;">
+				<input type="submit" class="btn btn-warning" value="REGRESAR MENU DE ESTUDIANTES">
 			</form>
 		</div>
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-
-		<hr style="color: rgb(242, 124, 17);height: 2px; ">
-		<footer style="color:rgb(6, 24, 151)">
-			<h4 style="text-align: center;color: rgb(242, 124, 17);"> CONTACTENOS</h4>
-
-
-
-			<div>
-				<div style="display: inline-block;padding: 12px;margin-left: 0.5cm;">
-					<p> Dirección: Napo y Esmeraldas</p>
-				</div>
-				<div style="display: inline-block;padding: 12px;margin-left: 9cm;">
-					<p> Teléfono: 02589625</p>
-				</div>
-				<div style="display: inline-block;padding: 12px;margin-left: 4.5cm;">
-					<p> Facebook: www.facebook.com/gutembergschedule</p>
-				</div>
-			</div>
-		</footer>
 	</div>
 </body>
 

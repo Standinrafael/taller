@@ -8,45 +8,32 @@
 
 <body>
 	<div layout:fragment="page-content">
-		<div style="margin-top: 0.5mm;display: flex;">
-			<img style="width: 5%; margin-left: 1cm;"
-				src="https://pbs.twimg.com/profile_images/1509299036406308866/Wr7VUxhp_400x400.jpg">
-			<h1 style="color:rgb(6, 24, 151); text-align:center;margin-left:12cm;margin-top:1mm"> GUTEMBERG WEB</h1>
-			<br />
 
-		</div>
-		<hr style="color: rgb(242, 124, 17); height: 2px;" <br />
-		<br />
-
-
-		<div style="margin-left: 1cm;">
+		<div class="container my-5">
 			<label> Seleccion el curso y paralelo que desea buscar:</label>
-			<br />
-			<form action="#" th:action="@{/sistemas/encontrar/cursos}" th:method="get">
-				<select id="curso" name=curso style="background-color: rgb(207, 207, 233);margin-left: 1cm;">
-					<option value="Primero"> Primero</option>
-					<option value="Segundo"> Segundo</option>
-					<option value="Tercero"> Tercero</option>
-					<option value="Cuarto"> Cuarto</option>
-					<option value="Quinto"> Quinto</option>
-					<option value="Sexto"> Sexto</option>
-					<option value="Septimo"> Septimo</option>
-				</select>
-				<select name=paralelo style="background-color: rgb(207, 207, 233);margin-left: 2cm;" id="paralelo">
-					<option value="A"> A</option>
-					<option value="B"> B</option>
+			<div class="row">
+				<div class="col-md-4">
+					<form action="#" class="input-group flex-nowrap" th:action="@{/sistemas/encontrar/cursos}" th:method="get">
+						<select class="form-select" name=curso id="curso">
+							<option value="Primero"> Primero</option>
+							<option value="Segundo"> Segundo</option>
+							<option value="Tercero"> Tercero</option>
+							<option value="Cuarto"> Cuarto</option>
+							<option value="Quinto"> Quinto</option>
+							<option value="Sexto"> Sexto</option>
+							<option value="Septimo"> Septimo</option>
+						</select>
+						<select class="form-select" name=paralelo id="paralelo">
+							<option value="A"> A</option>
+							<option value="B"> B</option>
 
-				</select>
-				<input style="margin-left: 2cm; color: rgb(128, 0, 0); background-color:beige;" type="submit"
-					value="Buscar" />
+						</select>
+						<input type="submit" class="btn btn-primary" value="Buscar" />
 
-			</form>
+					</form>
+				</div>
+			</div>
 		</div>
-
-
-		<br />
-		<br />
-		<br />
 
 		<div style="margin-left: 1.5cm; margin-right: 1.5cm;">
 
@@ -132,37 +119,12 @@
 
 
 		<br />
-		<div style="text-align: center;">
+		<div class="text-center mb-5">
 			<form action="#" th:action="@{/sistemas/inicio/reportes}" th:method="get">
-
-				<input type="submit" value="REGRESAR MENU DE REPORTES"
-					style="border-color: rgb(64, 0, 64); color: rgb(64, 0, 64); background-color: lightcyan;">
+				<input type="submit" class="btn btn-warning" value="REGRESAR MENU DE REPORTES">
 			</form>
 		</div>
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<hr style="color: rgb(242, 124, 17);height: 2px; ">
-		<footer style="color:rgb(6, 24, 151)">
-			<h4 style="text-align: center;color: rgb(242, 124, 17)"> CONTACTENOS</h4>
-
-
-
-			<div>
-				<div style="display: inline-block;padding: 12px;margin-left: 0.5cm;">
-					<p> Dirección: Napo y Esmeraldas</p>
-				</div>
-				<div style="display: inline-block;padding: 12px;margin-left: 9cm;">
-					<p> Teléfono: 02589625</p>
-				</div>
-				<div style="display: inline-block;padding: 12px;margin-left: 4.5cm;">
-					<p> Facebook: www.facebook.com/gutembergschedule</p>
-				</div>
-			</div>
-		</footer>
 	</div>
 </body>
 

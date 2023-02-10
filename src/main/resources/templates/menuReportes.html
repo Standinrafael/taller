@@ -4,6 +4,7 @@
 
 <head>
 	<title>MENU PRINCIPAL</title>
+	<link rel="stylesheet" th:href="@{/css/complementos.css}">
 </head>
 
 
@@ -27,80 +28,60 @@
 			<nav th:replace="pages/navbar :: navrepresentante"></nav>
 		</div>
 
-		<div style=" padding: 50px 30px ; ; margin: auto; margin-top: 10px x;width: 400px;height: 350px;">
-			<div style="text-align:center; ">
-
-				<table style="margin-left: 2.25cm;">
-					<tr>
-
-						<td>
-							<form action="#" th:action="@{/sistemas/buscar/docente}" th:method="get">
-
-								<input type="submit" value="BUSCAR HORARIO ATENCION DOCENTE"
-									style="color: rgb(128, 0, 0); background-color:beige;">
-							</form>
-
-						</td>
-
-					</tr>
-				</table>
-
-
-			</div>
-
-			<br />
-			<div>
-				<table style="margin-top: 1cm;margin-left: 2cm;">
-					<tr>
-
-						<td>
-							<form action="#" th:action="@{/sistemas/buscar/estudiante}" th:method="get">
-
-								<input type="submit" value="BUSCAR HORARIO ESTUDIANTE"
-									style="color: rgb(128, 0, 0); background-color:beige;">
-							</form>
-
-						</td>
-
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table style="margin-top: 2cm;margin-left: 2.5cm;">
-					<tr>
-
-						<td>
-							<form action="#" th:action="@{/sistemas/buscar/cursos}" th:method="get">
-
-								<input type="submit" value="CALENDARIO ACADEMICO"
-									style="color: rgb(128, 0, 0); background-color:beige;">
-							</form>
-
-						</td>
-
-					</tr>
-				</table>
-			</div>
-			<div>
-				<table style="margin-top: 2cm;margin-left: 3cm;">
-					<tr>
-
-						<td>
-							<form action="#" th:action="@{/sistemas/buscar/cursos}" th:method="get">
-
-								<input type="submit" value="MANUAL DE USUARIO"
-									style="color: rgb(128, 0, 0); background-color:beige;">
-							</form>
-
-						</td>
-
-					</tr>
-				</table>
+		<div class="container my-5">
+			<div class="row">
+				<form action="#" class="col-md-6" th:action="@{/sistemas/buscar/docente}" th:method="get">
+					<!--<input type="submit" value="BUSCAR HORARIO ATENCION DOCENTE" style="color: rgb(128, 0, 0); background-color:beige;">-->
+					<button class="col-md-12  container-flex flex-column opt">
+						<div class="opt-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+								<path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+							</svg>
+						</div>
+						<p class="center-component blockquote text-white mt-3">BUSCAR HORARIO ATENCION DOCENTE</p>
+					</button>
+				</form>
+				<form action="#" class="col-md-6" th:action="@{/sistemas/buscar/estudiante}" th:method="get">
+					<!--<input type="submit" value="BUSCAR HORARIO ESTUDIANTE" style="color: rgb(128, 0, 0); background-color:beige;">-->
+					<button class="col-md-12  container-flex flex-column opt">
+						<div class="opt-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+								<path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+							</svg>
+						</div>
+						<p class="center-component blockquote text-white mt-3">BUSCAR HORARIO ESTUDIANTE</p>
+					</button>
+				</form>
+				<form action="#" class="col-md-6" th:action="@{/sistemas/buscar/cursos}" th:method="get">
+					<!--<input type="submit" value="CALENDARIO ACADEMICO" style="color: rgb(128, 0, 0); background-color:beige;">-->
+					<button class="col-md-12  container-flex flex-column opt">
+						<div class="opt-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+								<path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+							</svg>
+						</div>
+						<p class="center-component blockquote text-white mt-3">CALENDARIO ACADEMICO</p>
+					</button>
+				</form>
+				<form action="#" class="col-md-6" th:action="@{/sistemas/buscar/cursos}" th:method="get">
+					<!--<input type="submit" value="MANUAL DE USUARIO" style="color: rgb(128, 0, 0); background-color:beige;">-->
+					<button class="col-md-12  container-flex flex-column opt">
+						<div class="opt-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-arrow-down" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
+								<path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+								<path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+							</svg>
+						</div>
+						<p class="center-component blockquote text-white mt-3">MANUAL DE USUARIO</p>
+					</button>
+				</form>
 			</div>
 		</div>
 
-		<br />
-		<br />
 	</div>
 </body>
 
