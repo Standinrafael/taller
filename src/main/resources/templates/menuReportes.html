@@ -42,9 +42,9 @@
 						<p class="center-component blockquote text-white mt-3">BUSCAR HORARIO ATENCION DOCENTE</p>
 					</button>
 				</form>
-				<form action="#" class="col-md-6" th:action="@{/sistemas/buscar/estudiante}" th:method="get">
+				<form  action="#" class="col-md-6" th:action="@{/sistemas/buscar/estudiante}" th:method="get">
 					<!--<input type="submit" value="BUSCAR HORARIO ESTUDIANTE" style="color: rgb(128, 0, 0); background-color:beige;">-->
-					<button class="col-md-12  container-flex flex-column opt">
+					<button th:if="${estu1==null} AND ${docen1==null}  AND ${emple1==null} AND ${repre1!=null} " class="col-md-12  container-flex flex-column opt">
 						<div class="opt-icon">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
 								<path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
@@ -79,7 +79,17 @@
 						<p class="center-component blockquote text-white mt-3">MANUAL DE USUARIO</p>
 					</button>
 				</form>
+				
+				
 			</div>
+		</div>
+		
+		<div>
+				<a download="Manual" href="https://uceedu-my.sharepoint.com/:b:/g/personal/jlsanchezi_uce_edu_ec/EVbADIXjhXtJs8JqBLRFTQwBoZCywoY3w7ScthX_pR20kg?e=hkNqbk">  Manual de Usuario</a>
+		</div>
+		
+		<div>
+				<a download="Calendario" href="https://uceedu-my.sharepoint.com/:b:/g/personal/jlsanchezi_uce_edu_ec/ETaAa4EuEBZHq0o0HX_-nPUBLL5GYaScaDerrPsX_iRaHw?e=9jLlvl"> Calendario Academico</a>
 		</div>
 
 	</div>
