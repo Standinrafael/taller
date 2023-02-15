@@ -23,20 +23,32 @@
 						<tr>
 							<th>Nombres</th>
 							<th>Apellidos</th>
-							<th>Edad</th>
-							<th>Direccion</th>
-							<th>Telefono</th>
-							<th>Correo</th>
+							<th>Matematicas</th>
+							<th>Conducta Matematicas</th>
+							<th>Lenguaje</th>
+							<th>Conducta Lenguaje</th>
+							<th>Sociales</th>
+							<th>Conducta Sociales</th>
+							<th>Ciencias</th>
+							<th>Conducta Ciencias</th>
+							<th>Aleman</th>
+							<th>Conducta Aleman</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="estudiante:${estudiante1}">
 							<td th:text="${estudiante.nombre}" />
 							<td th:text="${estudiante.apellido}" />
-							<td th:text="${estudiante.edad}" />
-							<td th:text="${estudiante.direccion}" />
-							<td th:text="${estudiante.telefono}" />
-							<td th:text="${estudiante.correo}" />
+							<td th:text="${estudiante.matematicas}" />
+							<td th:text="${estudiante.conductaMatematicas}" />
+							<td th:text="${estudiante.lenguaje}" />
+							<td th:text="${estudiante.conductaLenguaje}" />
+							<td th:text="${estudiante.sociales}" />
+							<td th:text="${estudiante.conductaSociales}" />
+							<td th:text="${estudiante.ciencias}" />
+							<td th:text="${estudiante.conductaCiencias}" />
+							<td th:text="${estudiante.aleman}" />
+							<td th:text="${estudiante.conductaAleman}" />
 
 						</tr>
 					</tbody>

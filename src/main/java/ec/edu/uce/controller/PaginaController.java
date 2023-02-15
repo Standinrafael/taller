@@ -88,6 +88,8 @@ public class PaginaController {
 	// Variables Estudiante y Docente donde capturo el usuario que ingresa
 
 	private Estudiante estudiante = new Estudiante();
+	private Estudiante estudianteTemporal=new Estudiante();
+	
 	private Estudiante estudianteActualiza = new Estudiante();
 	private Docente docente = new Docente();
 	private Docente docenteTemporal = new Docente();
@@ -187,6 +189,9 @@ public class PaginaController {
 		Docente docen1 = docente;
 		Empleado emple1 = empleado;
 		Representante repre1 = representante;
+		
+		System.out.println(docen1);
+		System.out.println(estu1);
 
 		model.addAttribute("estu1", estu1);
 		model.addAttribute("docen1", docen1);
@@ -208,7 +213,7 @@ public class PaginaController {
 	public String mostrarNotaEstudiante(@RequestParam("emailestu") String emailEstudiante, Model modelo) {
 
 		Estudiante estudianteRetorna = this.gestorCursoService.buscarEstudiantePorEmail(emailEstudiante);
-		estudiante = estudianteRetorna;
+		estudianteTemporal = estudianteRetorna;
 
 		correoActualizar = estudianteRetorna.getCorreo();
 
@@ -233,6 +238,8 @@ public class PaginaController {
 		modelo.addAttribute("calificacion", calificacion);
 
 		modelo.addAttribute("estudianteRetorna", estudianteRetorna);
+		
+		System.out.println(docente);
 		return "docenteActualizarNota";
 	}
 
@@ -297,8 +304,8 @@ public class PaginaController {
 					message.setSubject("Bajo rendimiento de su representado");
 
 					// Now set the actual message
-					message.setText("Buenos dias. Su representado/a:" + estudiante.getNombre() + " "
-							+ estudiante.getApellido() + " tiene baja calificacion en la materia " + materiaActualizar
+					message.setText("Buenos dias. Su representado/a: " + estudianteTemporal.getNombre() + " "
+							+ estudianteTemporal.getApellido() + " tiene baja calificacion en la materia " + materiaActualizar
 							+ " . Por favor acercase a conversar con el docente: " + docente.getNombre() + " "
 							+ docente.getApellido() + " en el horario de: " + docente.getHoraAtencion() + ":00 el dia: "
 							+ docente.getDiaAtencion() + ". Saludos");
@@ -318,6 +325,8 @@ public class PaginaController {
 			modelo.addAttribute("valor", valor);
 			modelo.addAttribute("mensaje", mensaje);
 		}
+		
+		
 
 		return "docenteActualizarNota";
 	}
